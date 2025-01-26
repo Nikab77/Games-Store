@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #444;
+}
+
+.btn-login {
+    color: white;
+    border: 1px solid #bbb;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.btn-login:hover {
+    background-color: #444;
+}
+
+.menu-checkbox {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.hero-title {
+    position: relative;
+    top: -500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: rgb(191, 238, 238);
+    text-align: center;
+}
+
+.hero-content {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 200px;
+    border-radius: 10px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-content {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-content {
+    padding: 10px;
+}
+
+.section-comments {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-checkbox:checked + .burger-menu + .navbar {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+main {
+    padding: 20px;
+}
+
+#gaming-peripherals {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.peripheral-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.peripheral-card {
+    background-color: #222;
+    border-radius: 10px;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.peripheral-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.peripheral-name {
+    margin-top: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.bottom-paragraph {
+    position: bottom;
+    bottom: 20px;
+    margin-left: 115px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .game-card {
+        flex: 1 1 calc(33% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-title{
+        top: -150px;
+        size: 100px;
+    }
+
+    .games-row,
+    .most-liked-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        flex: 1 1 100%;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        margin: 20px 10px;
+    }
+    .main-image img{
+        height: 50vh;
+     }
+     .special-card img{
+         width: 100%;
+         height: 50vh;
+     }
+
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .game-card img {
+        height: 120px;
+    }
+
+    .description {
+        font-size: 0.8rem;
+    }
+    .main-image img{
+       height: 30vh;
+    }
+    .special-card img{
+        width: 100%;
+        height: 30vh;
+    }
+}
