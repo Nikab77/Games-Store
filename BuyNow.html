@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Now - Payment</title>
+  <link rel="stylesheet" href="style/buynow.css">
+  <style>
+    .error-message {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+    .error-input {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Payment Information</h1>
+  </header>
+
+  <!-- Thank You Message Section -->
+  <div id="thank-you-message" class="success-message" style="display: none;">
+    Thank you for your purchase! Your order will be delivered on <span id="delivery-date"></span>.
+  </div>
+
+  <form id="paymentForm" action="#" method="POST">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Enter Payment Details</h2>
+      </div>
+
+      <!-- Customer Address -->
+      <div class="address-section">
+        <h3>Customer Address</h3>
+        <div class="form-group">
+          <label for="address">Street Address</label>
+          <input type="text" id="address" name="address" placeholder="Enter your street address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" placeholder="Enter your city" required>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" placeholder="Enter your state" required>
+        </div>
+
+        <div class="form-group">
+          <label for="zipcode">Zip Code</label>
+          <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zip code" required>
+          <small class="error-message" id="zipcode-error">Invalid zip code. Please enter a valid 5-digit zip code.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" name="country" placeholder="Enter your country" required>
+        </div>
+      </div>
+
+      <h3><br>Add Payment</h3>
+      <!-- Card Type -->
+      <div class="form-group">
+        <div class="card-icons">
+          <img src="image/atmcard.jpeg" alt="ATM Card" class="card-icon">
+        </div>
+      </div>
+
+      <!-- Card Information -->
+      <div class="form-group">
+        <label for="cardNumber">ATM/Bank Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+        <small class="error-message" id="cardNumber-error">Invalid card number. Please enter a 16-digit card number.</small>
+      </div>
+
+      <!-- Expiry Date -->
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date (MM/YY)</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+        <small class="error-message" id="expiryDate-error">Invalid expiry date. Please enter in MM/YY format.</small>
+      </div>
+
+      <!-- CVV -->
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="password" id="cvv" name="cvv" placeholder="CVV" required>
+        <small class="error-message" id="cvv-error">Invalid CVV. Please enter a 3-digit CVV.</small>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="button" id="pay-now" class="submit-btn" onclick="handlePayment()">Pay Now</button>
+    </div>
+  </form>
+
+  <div id="successMessage" class="success-message"></div>
+
+  <script>
+    // Handle form submission
+    function handlePayment() {
+      // Get form values
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+      const state = document.getElementById('state').value;
+      const zipcode = document.getElementById('zipcode').value;
+      const country = document.getElementById('country').value;
+      const cardNumber = document.getElementById('cardNumber').value;
+      const expiryDate = document.getElementById('expiryDate').value;
+      const cvv = document.getElementById('cvv').value;
+
+      // Error message elements
+      const zipcodeError = document.getElementById('zipcode-error');
+      const cardNumberError = document.getElementById('cardNumber-error');
+      const expiryDateError = document.getElementById('expiryDate-error');
+      const cvvError = document.getElementById('cvv-error');
+
+      // Reset error states
+      zipcodeError.style.display = 'none';
+      cardNumberError.style.display = 'none';
+      expiryDateError.style.display = 'none';
+      cvvError.style.display = 'none';
+
+      // Validate fields
+      let valid = true;
+
+      // Validate Zip Code
+      if (zipcode.length !== 5 || isNaN(zipcode)) {
+        valid = false;
+        zipcodeError.style.display = 'block';
+      }
+
+      // Validate Card Number
+      if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+        valid = false;
+        cardNumberError.style.display = 'block';
+      }
+
+      // Validate Expiry Date
+      if (!expiryDate.match(/^\d{2}\/\d{2}$/)) {
+        valid = false;
+        expiryDateError.style.display = 'block';
+      }
+
+      // Validate CVV
+      if (cvv.length !== 3 || isNaN(cvv)) {
+        valid = false;
+        cvvError.style.display = 'block';
+      }
+
+      if (valid) {
+        showSuccessMessage();
+      }
+    }
+
+    // Show success message after validation
+    function showSuccessMessage() {
+      const thankYouMessage = document.getElementById('thank-you-message');
+      const deliveryDate = document.getElementById('delivery-date');
+
+      // Calculate delivery date (add 3 days)
+      const today = new Date();
+      const deliveryDateObj = new Date(today);
+      deliveryDateObj.setDate(today.getDate() + 3);
+
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDeliveryDate = deliveryDateObj.toLocaleDateString('en-US', options);
+
+      deliveryDate.textContent = formattedDeliveryDate;
+      thankYouMessage.style.display = 'block';  // Show the thank you message
+    }
+  </script>
+</body>
+</html>

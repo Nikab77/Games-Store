@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Computer Parts</title>
+  <link rel="stylesheet" href="style/order.css">
+  <link rel="icon" href="/image/logo 1.avif" type="image/avif">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="/image/logo 1.avif" alt="Logo" class="logo-img">
+    </div>       
+    <!-- Hamburger Menu Toggle -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <label for="menu-toggle" class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/home.html" class="nav-link">Home</a>
+        <a href="/games.html" class="nav-link">Games</a>
+        <a href="/cosoles.html" class="nav-link">Consoles</a>
+        <a href="/upcoming.html" class="nav-link">Upcoming Games</a>
+        <a href="/aboutus.html" class="nav-link">About Us</a>
+        <a href="/Peripherals.html" class="nav-link">Gaming Peripherals</a>
+        <a href="/faq.html" class="nav-link">Queries FAQ</a>
+        <a href="/order.html" class="nav-link">Computer Parts</a>
+    </nav>
+    <a href="#login" class="btn btn-login">Login</a>
+  </header>
+
+  <h1>Computer Parts Order Page</h1>
+
+  <form id="orderForm">
+    <!-- Proceed to Checkout Button -->
+<button type="button" class="submit-btn" onclick="goToBuyNow()">Proceed to Checkout</button>
+  <!-- Processors Section -->
+  <div class="category">
+    <h2>Processors</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="image/computer parts/AMD Ryzen™ 7 9800X3D 100001084WOF.jpeg" alt="Intel i5">
+        <p>Intel i5</p>
+        <button type="button" onclick="addToCart('Intel i5', 40000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Intel i5', 40000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Intel i5', 40000, -1)">-</button>
+        <span id="intel-i5-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/AMD Ryzen 9 9950X Granite Ridge AM5 4_30GHz 16-Core Boxed Processor.jpeg" alt="Intel i7">
+        <p>Intel i7</p>
+        <button type="button" onclick="addToCart('Intel i7', 60000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Intel i7', 60000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Intel i7', 60000, -1)">-</button>
+        <span id="intel-i7-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/AMD Ryzen™ 7 9800X3D 100001084WOF.jpeg" alt="Intel i9">
+        <p>Intel i9</p>
+        <button type="button" onclick="addToCart('Intel i9', 80000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Intel i9', 80000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Intel i9', 80000, -1)">-</button>
+        <span id="intel-i9-quantity">0</span>
+      </div>
+      <!-- New Processors Added -->
+      <div class="product-card">
+        <img src="image/computer parts/Mwave Intel Core i9 14900K 24 Core 32 Thread up to 6GHz LGA 1700 Unlocked Processor, BX8071514900K Intel Desktop CPU.jpeg" alt="Ryzen 3">
+        <p>Ryzen 3</p>
+        <button type="button" onclick="addToCart('Ryzen 3', 35000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Ryzen 3', 35000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Ryzen 3', 35000, -1)">-</button>
+        <span id="ryzen-3-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/CPU Intel Core i7 13700F 16 nhân 24 luồng.jpeg" alt="Ryzen 5">
+        <p>Ryzen 5</p>
+        <button type="button" onclick="addToCart('Ryzen 5', 42000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Ryzen 5', 42000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Ryzen 5', 42000, -1)">-</button>
+        <span id="ryzen-5-quantity">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graphic Cards Section -->
+  <div class="category">
+    <h2>Graphic Cards</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="image/computer parts/GeForce RTX 4090, 티타늄 블랙 그래픽 카드, VGA 출력, 게임용 비디오 카드, 24GB, GDDR6X, 최신.jpeg" alt="GTX 1650">
+        <p>GTX 1650</p>
+        <button type="button" onclick="addToCart('RTX 4090', 30000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('GTX 1650', 30000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('GTX 1650', 30000, -1)">-</button>
+        <span id="gtx-1650-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/ASUSのTUFシリーズよりNVIDIA GeForce RTX 5090を搭載したビデオカード「TUF-RTX5090-O32G-GAMING」が2月22日に発売！.jpeg" alt="RTX 2060">
+        <p>RTX 2060</p>
+        <button type="button" onclick="addToCart('RTX 5090', 60000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('RTX 2060', 60000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('RTX 2060', 60000, -1)">-</button>
+        <span id="rtx-2060-quantity">0</span>
+      </div>
+      <!-- New Graphic Cards Added -->
+      <div class="product-card">
+        <img src="image/computer parts/ASUS TUF Gaming GeForce RTX 3070 Ti OC 8GB GDDR6X Grafikkarte online kaufen _ eBay.jpeg" alt="RTX 3070">
+        <p>RTX 3070</p>
+        <button type="button" onclick="addToCart('RTX 3070', 90000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('RTX 3070', 90000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('RTX 3070', 90000, -1)">-</button>
+        <span id="rtx-3070-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/Graphics Card.jpeg" alt="RX 580">
+        <p>RX 580</p>
+        <button type="button" onclick="addToCart('RTX 4070', 25000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('RX 580', 25000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('RX 580', 25000, -1)">-</button>
+        <span id="rx-580-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/GALAX 影驰 GeForce RTX 5080 16GB BLADE OC WHITE [CDM].jpeg" alt="RTX 3080">
+        <p>RTX 3080</p>
+        <button type="button" onclick="addToCart('RTX 5080', 120000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('RTX 3080', 120000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('RTX 3080', 120000, -1)">-</button>
+        <span id="rtx-3080-quantity">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="category">
+    <h2>Motherboards</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="image/computer parts/ASUS TUF Z370-PLUS Gaming LGA1151 (Intel 8th Gen) DDR4 HDMI DVI M_2 Z370 ATX Motherboard with Gigabit LAN and USB 3.1.jpeg" alt="ASUS Motherboard">
+        <p>ASUS Motherboard</p>
+        <button type="button" onclick="addToCart('ASUS Motherboard', 12000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('ASUS Motherboard', 12000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('ASUS Motherboard', 12000, -1)">-</button>
+        <span id="asus-motherboard-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/01f84a13-8dc8-4493-a69f-08e0893f4b85.jpeg" alt="MSI Motherboard">
+        <p>MSI Motherboard</p>
+        <button type="button" onclick="addToCart('MSI Motherboard', 13000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('MSI Motherboard', 13000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('MSI Motherboard', 13000, -1)">-</button>
+        <span id="msi-motherboard-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/B550 AORUS ELITE AX V2 (rev_ 1.5) Key Features _ Motherboard - GIGABYTE Global.jpeg" alt="Gigabyte Motherboard">
+        <p>Gigabyte Motherboard</p>
+        <button type="button" onclick="addToCart('Gigabyte Motherboard', 14000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Gigabyte Motherboard', 14000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Gigabyte Motherboard', 14000, -1)">-</button>
+        <span id="gigabyte-motherboard-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/Buy Gigabyte GA-H110M-H DDR3 Intel H110 LGA1151 Micro ATX motherboard Online.jpeg" alt="Biostar Motherboard">
+        <p>Biostar Motherboard</p>
+        <button type="button" onclick="addToCart('Biostar Motherboard', 11000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('Biostar Motherboard', 11000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('Biostar Motherboard', 11000, -1)">-</button>
+        <span id="biostar-motherboard-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/Mingsu B760M  DDR4 PLUS V1_05 LGA1700 motherboard desktop motherboard.jpeg" alt="EVGA Motherboard">
+        <p>EVGA Motherboard</p>
+        <button type="button" onclick="addToCart('EVGA Motherboard', 16000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('EVGA Motherboard', 16000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('EVGA Motherboard', 16000, -1)">-</button>
+        <span id="evga-motherboard-quantity">0</span>
+      </div>
+      <div class="product-card">
+        <img src="image/computer parts/Motherboard ASROCK FM2+ FM2A58M-VG3+ R2_0 M-ATX….jpeg" alt="ASRock Motherboard">
+        <p>ASRock Motherboard</p>
+        <button type="button" onclick="addToCart('ASRock Motherboard', 15000)">Add to Cart</button>
+        <button type="button" onclick="updateQuantity('ASRock Motherboard', 15000, 1)">+</button>
+        <button type="button" onclick="updateQuantity('ASRock Motherboard', 15000, -1)">-</button>
+        <span id="asrock-motherboard-quantity">0</span>
+      </div>
+    </div>
+  </div>
+
+<!-- Memory (RAM) Section -->
+<div class="category">
+  <h2>Memory (RAM)</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="image/computer parts/How to Asus Laptop RAM Memory upgrade_ - Copy.jpeg" alt="Corsair RAM">
+      <p>Corsair 8GB RAM</p>
+      <button type="button" onclick="addToCart('Corsair 8GB RAM', 5000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Corsair 8GB RAM', 5000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Corsair 8GB RAM', 5000, -1)">-</button>
+      <span id="corsair-8gb-ram-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/HyperX Fury Memoria RAM DDR4 3733MHz  8GB Gaming Desktop Memory PC4-30900 288Pin DIMM DDR4 RAM.jpeg" alt="G.Skill RAM">
+      <p>G.Skill 16GB RAM</p>
+      <button type="button" onclick="addToCart('G.Skill 16GB RAM', 8000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('G.Skill 16GB RAM', 8000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('G.Skill 16GB RAM', 8000, -1)">-</button>
+      <span id="gskill-16gb-ram-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/Netac Ram DDR4 Speicher 8GBx2 16GBx2 DDR4 3200MHz 3600MHz 2666MHz Ram DDR4 XMP2_0 Dual Channel mit - Copy.jpeg" alt="Kingston RAM">
+      <p>Kingston 8GB RAM</p>
+      <button type="button" onclick="addToCart('Kingston 8GB RAM', 4000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Kingston 8GB RAM', 4000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Kingston 8GB RAM', 4000, -1)">-</button>
+      <span id="kingston-8gb-ram-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/Lexar 32GB (2x16GB) ARES RGB DDR5 RAM 7200MT_s - Only $116_49 (Save $33.50!) - Copy.jpeg" alt="Samsung RAM">
+      <p>Samsung 16GB RAM</p>
+      <button type="button" onclick="addToCart('Samsung 16GB RAM', 9500)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Samsung 16GB RAM', 9500, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Samsung 16GB RAM', 9500, -1)">-</button>
+      <span id="samsung-16gb-ram-quantity">0</span>
+    </div>
+  </div>
+</div>
+
+<!-- Storage Devices Section -->
+<div class="category">
+  <h2>Storage Devices</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="image/computer parts/acer Predator GM7000 1TB NVMe Gen4 Gaming SSD, M_2 2280, Compatible with PS5, PCIe 4.0 Internal PC Solid State Hard Drive Up to 7400MB_s - BL.9BWWR.105 - Copy.jpeg" alt="Samsung SSD">
+      <p>Samsung 500GB SSD</p>
+      <button type="button" onclick="addToCart('Samsung 500GB SSD', 6000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Samsung 500GB SSD', 6000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Samsung 500GB SSD', 6000, -1)">-</button>
+      <span id="samsung-500gb-ssd-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/Integral V Series V2 240GB 2_5 Inch Internal Solid State Hard Drive (SSD) - Copy.jpeg" alt="WD SSD">
+      <p>WD 1TB SSD</p>
+      <button type="button" onclick="addToCart('WD 1TB SSD', 10000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('WD 1TB SSD', 10000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('WD 1TB SSD', 10000, -1)">-</button>
+      <span id="wd-1tb-ssd-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/JUHOR M_2 NVMe PCIe3.0 SSD 1T 2T M.2 NVMe SSD Festplatte Interne Festplatte Solid State Drive für - Copy.jpeg" alt="Seagate HDD">
+      <p>Seagate 2TB HDD</p>
+      <button type="button" onclick="addToCart('Seagate 2TB HDD', 4000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Seagate 2TB HDD', 4000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Seagate 2TB HDD', 4000, -1)">-</button>
+      <span id="seagate-2tb-hdd-quantity">0</span>
+    </div>
+    <div class="product-card">
+      <img src="image/computer parts/Qusedwey M_2 Adapter to 2.5 SATA Enclosure, Based NGFF SSD Converter to SATA 3.0 Card Black Support 2230 2242 2260 2280 - Copy.jpeg" alt="Crucial SSD">
+      <p>Crucial 1TB SSD</p>
+      <button type="button" onclick="addToCart('Crucial 1TB SSD', 11000)">Add to Cart</button>
+      <button type="button" onclick="updateQuantity('Crucial 1TB SSD', 11000, 1)">+</button>
+      <button type="button" onclick="updateQuantity('Crucial 1TB SSD', 11000, -1)">-</button>
+      <span id="crucial-1tb-ssd-quantity">0</span>
+    </div>
+  </div>
+</div>
+
+<form id="orderForm">
+  <!-- Proceed to Checkout Button -->
+  <button type="button" class="submit-btn" onclick="goToBuyNow()">Proceed to Checkout</button>
+  
+  <!-- Favourites Section -->
+  <div class="favourites-section">
+      <button id="add-to-favourites" class="submit-btn" type="button" onclick="saveOrderAsFavourite()">Add to Favourites</button>
+      <button id="apply-favourites" class="submit-btn" type="button" onclick="applyFavouriteOrder()">Apply Favourites</button>
+  </div>
+
+    <!-- Order Summary -->
+    <h2>Order Summary</h2>
+    <table id="orderTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2"><strong>Total</strong></td>
+          <td id="totalPrice">0</td>
+          <td>
+            <button type="button" class="btn-buy-now" onclick="goToBuyNow()">Buy Now</button>
+          </td>
+        </tr>
+      </tfoot>    
+    </table>
+  </form>
+
+  <script src="order.js"></script>
+</body>
+</html>
